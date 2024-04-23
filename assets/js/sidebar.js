@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const sidebarMenu = document.getElementById("sidebar-menu");
+    const yearDropdown = document.getElementById("year-dropdown");
 
     // Example data for demonstration
-    const years = [2024, 2025];
     const months = {
         2024: ["April", "May", "June", "July", "August", "September", "October", "November", "December"],
         2025: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -22,17 +22,31 @@ document.addEventListener("DOMContentLoaded", function() {
         "December": 31
     };
 
-    // Function to toggle month dropdown visibility
-    function toggleMonthDropdown(event) {
-        event.preventDefault();
-        const yearItem = event.target.closest("li");
-        const monthDropdown = yearItem.querySelector(".months");
-        monthDropdown.classList.toggle("show");
+    // Function to populate months dropdown based on selected year
+    function populateMonths() {
+        const selectedYear = yearDropdown.value;
+        const monthDropdown = document.createElement("select");
+        monthDropdown.classList.add("months");
+        monthDropdown.addEventListener("change", populateDays);
+        const monthsOfYear = months[selectedYear];
+        monthsOfYear.forEach(month => {
+            const option = document.createElement("option");
+            option.value = month;
+            option.textContent = month;
+            monthDropdown.appendChild(option);
+        });
+        const existingMonthDropdown = sidebarMenu.querySelector(".months");
+        if (existingMonthDropdown) {
+            existingMonthDropdown.remove();
+        }
+        sidebarMenu.appendChild(monthDropdown);
     }
 
-    // Function to populate the day dropdown
-    function populateDays(year, month, monthItem) {
-        const days = Array.from({ length: daysInMonth[month] }, (_, i) => i + 1);
+    // Function to populate days dropdown based on selected month
+    function populateDays(event) {
+        const selectedYear = yearDropdown.value;
+        const selectedMonth = event.target.value;
+        const days = Array.from({ length: daysInMonth[selectedMonth] }, (_, i) => i + 1);
         const daySelect = document.createElement("select");
         daySelect.classList.add("days");
         days.forEach(day => {
@@ -41,31 +55,26 @@ document.addEventListener("DOMContentLoaded", function() {
             option.textContent = day;
             daySelect.appendChild(option);
         });
-        const existingDayDropdown = monthItem.querySelector(".days");
+        const existingDayDropdown = sidebarMenu.querySelector(".days");
         if (existingDayDropdown) {
             existingDayDropdown.remove();
         }
-        monthItem.appendChild(daySelect);
+        sidebarMenu.appendChild(daySelect);
     }
 
-    // Populate the year dropdown
-    years.forEach(year => {
-        const yearItem = document.createElement("li");
-        yearItem.innerHTML = `<a href="#">${year}</a>`;
-        yearItem.addEventListener("click", toggleMonthDropdown);
-        const monthDropdown = document.createElement("ul");
-        monthDropdown.classList.add("months");
-        monthDropdown.innerHTML = months[year].map(month => {
-            const monthItem = document.createElement("li");
-            monthItem.innerHTML = `<a href="#">${month}</a>`;
-            monthItem.addEventListener("click", function(event) {
-                event.preventDefault();
-                const monthName = event.target.innerText; // Get the month name from the clicked element
-                populateDays(year, monthName, monthItem); // Pass the month name instead of the month index
-            });
-            return monthItem.outerHTML;
-        }).join('');
-        yearItem.appendChild(monthDropdown);
-        sidebarMenu.appendChild(yearItem);
+    // Populate months dropdown when a year is selected
+    yearDropdown.addEventListener("change", populateMonths);
+
+    // Get sidebar element
+    const sidebar = document.querySelector('.sidebar');
+
+    // Add event listener for mouseenter event
+    sidebar.addEventListener('mouseenter', () => {
+        sidebar.style.width = '300px'; // Adjust width as needed
+    });
+
+    // Add event listener for mouseleave event
+    sidebar.addEventListener('mouseleave', () => {
+        sidebar.style.width = '200px'; // Adjust width to its original value
     });
 });

@@ -708,7 +708,7 @@ body.light-theme{
 }
 
 .faith-blog-post-container {
-    max-width: 75%;
+    max-width: 90%;
     margin: 0 auto;
     margin-left: 0;
 }
@@ -984,15 +984,24 @@ body.light-theme{
 /* Faith Blog */
 .sidebar {
     position: fixed;
-    top: 70px;
-    height: calc(100vh - 190px); /* adjust length of sidebar */
-    right: 0;
+    top: 74px;
+    /* height: calc(100vh - 190px); adjust length of sidebar */
+    height: 100vh;
+    /* right: 0; */
+    right: -150px;
     bottom: 0;
     width: 200px;
     background-color: #252830;
     overflow-y: auto;
-    padding: 20px;
+    padding: 10px;
+    padding-bottom: 350px;
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: width 0.3; /* transition for smooth animation*/
+}
+
+.sidebar:hover {
+    width: 300px;
+    right: 0;
 }
 
 .sidebar-inner {
@@ -1028,7 +1037,7 @@ body.light-theme{
 
 .main-content {
     margin-right: 220px;
-}
+} */
 
 /* Sidebar JS */
 .months {
@@ -1045,12 +1054,12 @@ body.light-theme{
     position: absolute;
     top: 0;
     left: 100%; /* Position the days dropdown to the right of the month dropdown */
-    min-width: 120px; /* Set a minimum width for the dropdown */
+    min-width: 50px; /* Set a minimum width for the dropdown */
     background-color: #fff; /* Background color */
     border: 1px solid #ccc; /* Border */
     border-radius: 4px; /* Border radius */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
     z-index: 1000; /* Ensure the dropdown appears above other elements */
     list-style: none; /* Remove default list styles */
-    padding: 0;
-} 
+    padding: 10;
+}
