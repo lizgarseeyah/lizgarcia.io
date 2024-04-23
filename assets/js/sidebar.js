@@ -65,16 +65,26 @@ document.addEventListener("DOMContentLoaded", function() {
     // Populate months dropdown when a year is selected
     yearDropdown.addEventListener("change", populateMonths);
 
-    // Get sidebar element
-    const sidebar = document.querySelector('.sidebar');
+    // Function to handle sidebar width adjustment
+    function adjustSidebarWidth(width) {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.width = width;
+    }
 
-    // Add event listener for mouseenter event
-    sidebar.addEventListener('mouseenter', () => {
-        sidebar.style.width = '300px'; // Adjust width as needed
+    // Add event listeners for sidebar width adjustment
+    sidebarMenu.addEventListener('touchstart', () => {
+        adjustSidebarWidth('300px');
     });
 
-    // Add event listener for mouseleave event
-    sidebar.addEventListener('mouseleave', () => {
-        sidebar.style.width = '200px'; // Adjust width to its original value
+    sidebarMenu.addEventListener('touchend', () => {
+        adjustSidebarWidth('200px');
+    });
+
+    sidebarMenu.addEventListener('mouseenter', () => {
+        adjustSidebarWidth('300px');
+    });
+
+    sidebarMenu.addEventListener('mouseleave', () => {
+        adjustSidebarWidth('200px');
     });
 });
