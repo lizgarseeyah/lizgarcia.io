@@ -96,34 +96,117 @@
             </div>
 
             <div class="container">
-                <p>
-                    Apple came out in support of California’s “Right-to-repair” law which is the company’s latest stance in its involvement in California’s legislative saga with the tech company. From technical news source, The Verge, “The right-to-repair movement is just getting started”, Governor Gavin Newsom last month signed into law the “Right to Repair Act” which guarantees everyone access to parts, tools, and manuals needed to repair electronics and was initially voiced against by Apple. This creates challenges faced by independent repair professionals and right-to-repair advocates, despite recent legislative victories in California, Minnesota, and New York. Apple’s support of the law was surprising given that independent repairs affect Apple’s bottom line and intellectual property.
-                </p>
-                
-                <p>
-                    While bottom line profits are one area of concern, Apple and other tech companies, such as Meta, Microsoft, Amazon, Alphabet, and Tesla, oppose the legislation because it infringes on intellectual property rights, creates a concern for safety, and could potentially damage their reputations. The opposition, however, is seen as a hindrance to creating a more sustainable and repair-friendly tech ecosystem. So why is Apple’s support for this bill surprising? Simply put, Apple's commitment to repair may be more about complying with legislation than a fundamental shift in its design philosophy.
-                </p>
-                
-                <p>
-                    The whole goal of the bill is aimed at reducing environmental impacts from e-waste, in particular reducing the contributing carbon emissions and resource depletion from electronic waste that accumulates in landfills. It also attempts to level the playing field for independent repairs between device manufacturers and everyone else.
-                </p>
+                    <h2>Types of Predefined Power Platform Roles</h2>
+                    <p>These roles represent common user tasks:</p>
+                    
+                    <h3>Environment Roles without Dataverse:</h3>
+                    <ul>
+                        <li>Environment Admin</li>
+                        <li>Environment Maker</li>
+                    </ul>
 
-                <blockquote class="quote">
-                    <p><span><i class="ri-double-quotes-l"></i></span> Despite the environmental benefits of increased repair access, some of the world’s biggest tech companies, including Apple, Microsoft, Amazon, Alphabet, Meta, and Tesla, have spent millions convincing lawmakers not to support it. Manufacturers cite a range of reasons for their opposition: right to repair will infringe on their intellectual property rights; consumers will injure themselves fixing their stuff; independent repair will lead to more hacking; and shoddy repairs will damage companies’ reputations. John Deere has even claimed that greater repair access will allow farmers to tamper with the emissions controls on their tractors in violation of the Clean Air Act — a notion the Environmental Protection Agency recently refuted. <span><i class="ri-double-quotes-r"></i></span></p>
-                </blockquote>
-            
-                <p>
-                    Repair advocates and lawmakers argue that these claims are baseless and that the real reason is the impact on bottom line profits. To hinder independent repair, tech giants make it challenging to fix devices through design choices by soldering components directly to logic boards, parts pairing which makes it difficult to refurbish devices, the use of proprietary screws, and utilizing glued-in batteries, all of these design choices create physical barriers to repair. Software support is another critical factor, as manufacturers discontinuing updates can render devices obsolete. Software locks pose significant threats to the refurbishment business model, making it more challenging for professionals to salvage and restore devices. However, tech companies are starting to realize they may be on the losing side; Apple launched the first self-repair programs in 2022, Microsoft released a study promoting independent repairs, and Samsung and Google announced partnerships with iFixit, a company that provides online resources for DIY-ers. 
-                </p>
+                    <h3>Environment Roles with Dataverse:</h3>
+                    <p>These roles cannot be edited but can be copied and modified:</p>
+                    <ul>
+                        <li>System Admin (Instead of Environment Admin, user must have System Admin role for full admin privileges)</li>
+                        <li>Environment Maker + System Customizer (to create apps and make changes to entities)</li>
+                        <li>App Opener</li>
+                        <li>Basic User</li>
+                        <li>Delegate</li>
+                        <li>Dynamics 365 Administrator</li>
+                        <li>Environment Maker</li>
+                        <li>Global Administrator</li>
+                        <li>Global Reader</li>
+                        <li>Office Collaborator</li>
+                        <li>Power Platform Administrator</li>
+                        <li>Service Deleted</li>
+                        <li>Service Reader</li>
+                        <li>Service Writer</li>
+                        <li>Support User</li>
+                        <li>System Administrator</li>
+                        <li>System Customizer</li>
+                        <li>Website App Owner</li>
+                        <li>Website Owner</li>
+                    </ul>
+                    
+                    <p><a href="https://admin.powerplatform.microsoft.com/">Power Platform admin center</a> is used to configure access to Power Platform for Environments:</p>
+                    <img src="../../../assets/images/Technology/power-plaform-admin-access.jpg" alt="">
+                    <h2>User Criteria:</h2>
+                    <ul>
+                        <li>Individual who has an active license</li>
+                        <li>Enabled in Microsoft Entra ID</li>
+                        <li>Member of the environment's security group</li>
+                    </ul>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/power-platform/admin/create-users">Create users - Power Platform | Microsoft Learn</a></p>
 
-                <p>
-                    The article by Verge, “The right-to-repair movement is just getting started”, presents a complex landscape where legislative victories are celebrated, but challenges persist due to manufacturer practices, design choices, and the need for more comprehensive regulations. It’s an ongoing struggle and there is a call for nationwide legislation in the United States. There needs to be a way to ensure transparency and fair market competition. EU’s ecodesign regulation mandates manufacturers design products to meet standards which promote a more environmentally conscious approach to product development and it would be interesting to see if something similar would be passed in the United States and how it would affect both device manufacturers and independent repairers. 
-                </p>
+                    <h2>Definitions:</h2>
+                    <h3>Types of Users:</h3>
+                    <ul>
+                        <li><strong>Regular User:</strong> Synchronized with Microsoft Entra ID.</li>
+                        <li><strong>Application User:</strong> Built-in user account for integration and system back-end service support. Created during system provisioning.</li>
+                        <li><strong>System User:</strong> Built-in user account allowing customers to perform system updates via plug-ins.</li>
+                        <li><strong>Non-interactive User:</strong> Access mode for programmatic access between applications, no license required.</li>
+                        <li><strong>Support User:</strong> Placeholder for internal Microsoft support users, created by Dataverse.</li>
+                        <li><strong>Delegated Administrator:</strong> Placeholder user record for partners, generated by Dataverse.</li>
+                    </ul>
+                    <p>More information on users: <a href="https://learn.microsoft.com/en-us/power-platform/admin/system-application-users">System and Application Users</a></p>
 
-                <p>
-                    Source Link: <a href="https://www.theverge.com/23951200/right-to-repair-law-apple-ifixit-iphone">"The right-to-repair movement is just getting started"</a>
-                </p>
+                    <h3>Server-to-Server (S2S) apps:</h3>
+                    <p>Authenticate and communicate with Microsoft Dataverse using web applications and services.</p>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/build-web-applications-server-server-s2s-authentication">Server-to-Server Authentication</a></p>
 
+                    <h3>Team (optional):</h3>
+                    <p>Share business objects and collaborate with other business units.</p>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/power-platform/admin/manage-teams">Manage Teams</a></p>
+
+                    <h3>Types of Teams:</h3>
+                    <ul>
+                        <li><strong>Owner team:</strong> Owns records, has assigned security roles, grants full access rights, manually adds team members.</li>
+                        <li><strong>Access team:</strong> Doesn't own records, lacks assigned security roles, shares records with the team for Read, Write, and Append access.</li>
+                        <li><strong>Microsoft Entra group team:</strong> Similar to owner teams, can own records, dynamically adds/removes members based on Entra group membership.</li>
+                    </ul>
+
+                    <h3>Business Unit:</h3>
+                    <p>A logical grouping of related business activities mapped to an organization's department or division. Allows access to records within the business unit.</p>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/power-platform/admin/create-edit-business-units">Create and Edit Business Units</a></p>
+
+                    <h3>Parent: Child Business Unit:</h3>
+                    <p>Grants access to records in the business unit and its subordinates, typically for managers.</p>
+
+                    <h3>Organization:</h3>
+                    <p>Provides access to all records in the organization, usually reserved for managers.</p>
+
+                    <h2>Notes:</h2>
+                    <p>Use Entra Security Groups and Users, Teams, and Business Units to achieve Separation and Segmentation of data.</p>
+                    <p>Source: <a href="https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges#access-levels">Security Roles and Privileges</a></p>
+
+                    <h2>How to...</h2>
+                    <ul>
+                        <li><a href="https://learn.microsoft.com/en-us/power-platform/admin/create-users">Assign licenses</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/power-platform/admin/add-users">Enable/Disable users to an environment</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/power-platform/admin/assign-security-roles">Assign Security Roles</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/power-platform/admin/create-edit-security-role">Create or edit a Security Role</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/power-platform/admin/create-edit-security-role">Create or configure a custom Security Role</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/power-platform/admin/create-users">Remove Power Platform Licenses from users</a></li>
+                    </ul>
+
+                    <h2>Best practices and strategies:</h2>
+                    <ul>
+                        <li><a href="https://learn.microsoft.com/en-us/power-platform/guidance/adoption/license-assignment-strategies#common-license-assignment-strategies">License assignment strategies</a></li>
+                        <li>Reassign resources to a licensed user and remove the user from the Entra ID group if a licensed user leaves the organization.</li>
+                        <li>Understand License Types: Familiarize yourself with the various license types offered by Power Platform.</li>
+                        <li>Assess User Needs: Determine specific requirements of each user or group within your organization to assign appropriate licenses efficiently.</li>
+                        <li>Optimize Licensing: Regularly review and adjust licenses based on user activity, ensuring necessary features without unnecessary costs.</li>
+                        <li>Utilize Trial Periods: Use trial periods for new users or projects to assess needs before committing to long-term licenses.</li>
+                        <li>Implement Role-Based Licensing: Assign licenses based on users' roles and responsibilities to ensure they have access to needed tools.</li>
+                        <li>Monitor Usage: Track license usage through the Power Platform Admin Center to identify underutilized licenses or potential license violations.</li>
+                        <li>Educate Users: Provide training and resources to maximize value of licenses and encourage adoption of Power Platform tools.</li>
+                        <li>Consider External Users: Evaluate the need for external users to access Power Platform applications and explore options like guest access or dedicated licenses.</li>
+                        <li>Stay Updated: Stay informed about changes in licensing policies and features to make informed decisions and optimize license management strategies.</li>
+                    </ul>
+                <p>
+                    Related Articles:
+                </p>
                 <div class="author d-grid">
                     <div class="author-image-box">
                         <img src="../../../assets/images/Profile/Liz_Profile_Pic.jpg" alt="" class="article-image">

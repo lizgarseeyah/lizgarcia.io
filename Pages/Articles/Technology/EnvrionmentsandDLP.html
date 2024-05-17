@@ -96,32 +96,100 @@
             </div>
 
             <div class="container">
+                <body>
+                    <h1>What are environments?</h1>
+                    <p>Environments are containers for managing apps, automation, connections, and other assets in the Power Platform ecosystem. They allow administrators to organize resources and control access permissions for organization users.</p>
+                    <p><a href="https://learn.microsoft.com/en-us/power-platform/admin/environments-overview">Environments Overview</a></p>
+                    <p>Multiple types of environments exist, each serving different purposes and having distinct characteristics. Environment types are determined by their intended use and management requirements.</p>
+                    <ul>
+                        <li><strong>Production:</strong> Used for permanent work, fully controlled, and intended for critical organizational use.</li>
+                        <li><strong>Default:</strong> Automatically created for each tenant, limited control, and accessible to all licensed users.</li>
+                        <li><strong>Sandbox:</strong> Non-production environments for development and testing, fully controlled, and can be restricted to admins for provisioning.</li>
+                        <li><strong>Trial:</strong> Intended for short-term testing, automatically cleaned up after 30 days, and can be provisioned by admins.</li>
+                        <li><strong>Developer:</strong> Created by users with Developer Plan license, intended for individual use, and limited control over security.</li>
+                        <li><strong>Microsoft Dataverse for Teams:</strong> Automatically created for Teams apps, limited control, and automatic mapping of Teams membership to security roles.</li>
+                    </ul>
+                    <h2>How-to:</h2>
+                    <h3>Define a Power Platform Strategy:</h3>
+                    <p><strong>The Default Environment:</strong></p>
+                    <ul>
+                        <li>Automatically created for each tenant by Power Apps, shared by all users in the tenant.</li>
+                        <li>New users are automatically added to the Maker role but not Environment Admin role.</li>
+                        <li>Cannot be deleted, but can be renamed; typically used for personal productivity apps and basic development.</li>
+                    </ul>
+                    <p><strong>Importance of Defining a Strategy:</strong></p>
+                    <p>Developing an environment strategy involves configuring environments and data security layers (DLP) to support productive development while securing and organizing resources. It facilitates adherence to application lifecycle management (ALM) principles, especially for separating development and production environments.</p>
+                    <h3>Environment Scenarios:</h3>
+                    <ul>
+                        <li><strong>Scenario 1 - Personal Productivity:</strong> Default environment for personal productivity apps and basic development.</li>
+                        <li><strong>Scenario 2 - Departmental:</strong> Includes dedicated departmental environments in addition to personal productivity.</li>
+                        <li><strong>Scenario 3 - Departmental and Application:</strong> Incorporates dedicated application environments alongside departmental ones.</li>
+                        <li><strong>Scenario 4 - Multi-Tenant ALM:</strong> Involves separating environments across physical tenants for ALM or geo-location reasons.</li>
+                    </ul>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/microsoft-365/community/defining-a-power-platform-environment-strategy#recommendations--best-practices">Defining a Power Platform Environment Strategy</a></p>
+                    <h3>Establish a Power Platform Strategy:</h3>
+                    <ul>
+                        <li><strong>Assign Administrative Roles:</strong> Assign Microsoft Power Platform service admin or Dynamics 365 service admin roles to designated admins for comprehensive management of Power Platform resources. These roles encompass administrative access to various Power Platform components like canvas apps, flows, environments, custom connectors, etc.</li>
+                        <li><strong>Control Environment Creation:</strong> Restrict the creation of production environments to admins to manage capacity consumption and streamline environment management. Centralize environment creation to facilitate oversight and ensure alignment with organizational objectives.</li>
+                        <li><strong>Define Default Environment Usage:</strong> Utilize the default environment for user and team productivity, reserving it for non-critical applications. Clearly communicate the purpose of the default environment and consider renaming it to reflect its designated usage.</li>
+                        <li><strong>Establish Environment Request Process:</strong> Implement a formal process for requesting access to or creation of environments, ensuring clear communication and alignment between developers and admins. Encourage users to articulate their needs and intentions when requesting new environments, promoting transparency and accountability.</li>
+                        <li><strong>Implement Environment Tiering:</strong> Create separate environments for development, testing, and production stages, especially for critical projects or business units. Adopt a tiered approach to environment management based on the complexity and importance of applications, ensuring appropriate resource allocation and security measures.</li>
+                        <li><strong>Utilize Individual-Use Environments:</strong> Allocate individual-use environments for proof of concepts, training workshops, or temporary projects to facilitate organization and resource management. Encourage users to utilize trial environments for activities that do not require long-term commitments or capacity consumption.</li>
+                        <li><strong>Implement Data Loss Prevention Policies:</strong> Establish and maintain tenant and environment-level Data Loss Prevention (DLP) policies to safeguard organizational data and ensure compliance with security standards. Customize DLP policies based on the sensitivity of data and the specific requirements of each environment.</li>
+                        <li><strong>Adopt a Tiered Approach to Team Environments:</strong> Create shared environments tailored to support integrations, reduce environment sprawl, and expedite onboarding processes. Define distinct environments for different user groups or teams based on their connectivity requirements and level of access.</li>
+                        <li><strong>Automate Environment Management:</strong> Automate environment creation and provisioning processes to streamline administrative tasks and improve efficiency. Leverage tools and connectors to facilitate environment creation requests, approvals, and resource allocation.</li>
+                        <li><strong>Utilize Service Accounts for Production Deployment:</strong> Employ service accounts managed by central IT for deploying solutions to test and production environments, enhancing security and oversight. Ensure proper permissions and access controls are in place to mitigate risks associated with shared admin privileges.</li>
+                        <li><strong>Conserve Capacity and Resources:</strong> Optimize capacity utilization by managing shared test and production environments effectively and encouraging resource cleanup. Balance environment provisioning based on application criticality, complexity, and organizational needs to maximize resource allocation.</li>
+                        <li><strong>Communicate Environment Strategy:</strong> Establish clear guidelines and documentation outlining the organization's environment strategy, including roles and responsibilities of makers. Educate users on best practices for environment usage, data protection, and resource management to promote a culture of accountability and efficiency.</li>
+                    </ul>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/power-platform/guidance/adoption/environment-strategy">Power Platform Environment Strategy</a></p>
+                    <h2>Managed Environments</h2>
+                    <p>The purpose of Managed Environments is to provide administrators with a suite of capabilities for managing Power Platform resources at scale, offering greater control, reduced effort, and enhanced insights. Managed Environments can be utilized with different types of environments, and certain features can be configured upon enabling this capability. Once an environment is managed, it unlocks additional features across the Power Platform, enabling administrators to optimize their management processes and improve efficiency in managing Power Platform resources.</p>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/power-platform/admin/managed-environment-overview">Managed Environment Overview</a></p>
+                    <h2>Security and Governance Considerations</h2>
+                    <p><a href="https://learn.microsoft.com/en-us/power-platform/admin/governance-considerations">Security and Governance Considerations</a></p>
+                    <h2>Allocate or Change Capacity in an Environment</h2>
+                    <p><a href="https://learn.microsoft.com/en-us/power-platform/admin/capacity-add-on#allocate-or-change-capacity-in-an-environment">Allocate or Change Capacity in an Environment</a></p>
+                    <h2>Best Practices:</h2>
+                    <p><a href="https://learn.microsoft.com/en-us/power-platform/admin/environments-overview#default-environment-best-practices">Managing Default Environments</a></p>
+                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/community/defining-a-power-platform-environment-strategy#recommendations--best-practices">Recommendations/Best Practices</a></p>
+                    <h2>Data Loss Prevention (DLP) Strategy Overview:</h2>
+                    <p>DLP policies serve as guardrails to prevent inadvertent exposure of organizational data and enhance information security. Policies enforce rules for connector usage, categorizing them into business, non-business, or blocked groups.</p>
+                    <h3>Quick Facts about DLP Policies:</h3>
+                    <ul>
+                        <li>Can be scoped at environment or tenant level, offering flexibility while avoiding productivity hindrance.</li>
+                        <li>Tenant-wide policies cannot be overridden by environment-specific ones.</li>
+                        <li>Most restrictive policy applies if multiple policies are configured for an environment.</li>
+                        <li>No default policies are implemented initially; policies are applied at environment or tenant level.</li>
+                    </ul>
+                    <h3>Connector Classification:</h3>
+                    <p>Connectors are classified as business, non-business, or blocked, dictating their usage in apps or flows. Business connectors can only be used with others from the same group; non-business connectors cannot be used with business ones.</p>
+                    <h3>Strategies for DLP Policies Creation:</h3>
+                    <ul>
+                        <li>Start by establishing base policies and then handle exceptions as needed.</li>
+                        <li>Recommended starting point for shared user and team productivity environments: restrict access to non-standard connectors.</li>
+                        <li>For production environments, exclude them from shared policies and tailor policies based on business unit needs.</li>
+                    </ul>
+                    <h3>Implementation Steps:</h3>
+                    <ul>
+                        <li>Set up data policies in the Power Platform admin center.</li>
+                        <li>Use DLP SDK to customize policies, including adding custom connectors.</li>
+                        <li>Communicate DLP policies clearly to makers, providing contact information for exception scenarios.</li>
+                    </ul>
+                    <p>Example: Contoso, a fictional company, has set up their Data Loss Prevention (DLP) policies to match their business needs and how they organize their work.</p>
+                    <h3>Tenant-Wide Restrictive Policy:</h3>
+                    <p>Contoso has a strict rule that applies to all areas of their work, except for specific places they've decided are exceptions. They want to keep things safe by only allowing certain types of connections, like Office 365 and standard services, and blocking everything else. This rule applies to their main, default area where most work happens.</p>
+                    <h3>Special Shared Environment:</h3>
+                    <p>They've created another space where people can make apps for everyday work tasks. Here, they're a bit more flexible with what connectors people can use. They allow things like Azure services along with Office 365. Since this space is different from the main one, they can control who gets to make things there more carefully.</p>
+                    <h3>Business Units' Environments:</h3>
+                    <p>Different parts of the company have their own special areas for making important apps. For example, the tax and audit teams have spaces where they can create apps just for their needs. Contoso's IT department also has separate places for making apps they'll use.</p>
+                    <h3>Center of Excellence (CoE) Space:</h3>
+                    <p>Contoso has a special area just for experimenting and trying new things, run by their CoE team. Here, they're extra careful with what rules they have, as they're testing new ideas. They've given special control over this area to trusted people on the CoE team.</p>
+                    <h3>Keeping Things Organized:</h3>
+                    <p>Whenever Contoso creates a new space for work, they make sure it follows the main rules they've set up. But they also let individual teams add extra rules if they need to. This helps keep everything organized and safe while letting people do their work effectively.</p>
+                    <p>More information: <a href="https://learn.microsoft.com/en-us/power-platform/guidance/adoption/dlp-strategy">DLP Strategy</a></p>
                 <p>
-                    Apple came out in support of California’s “Right-to-repair” law which is the company’s latest stance in its involvement in California’s legislative saga with the tech company. From technical news source, The Verge, “The right-to-repair movement is just getting started”, Governor Gavin Newsom last month signed into law the “Right to Repair Act” which guarantees everyone access to parts, tools, and manuals needed to repair electronics and was initially voiced against by Apple. This creates challenges faced by independent repair professionals and right-to-repair advocates, despite recent legislative victories in California, Minnesota, and New York. Apple’s support of the law was surprising given that independent repairs affect Apple’s bottom line and intellectual property.
-                </p>
-                
-                <p>
-                    While bottom line profits are one area of concern, Apple and other tech companies, such as Meta, Microsoft, Amazon, Alphabet, and Tesla, oppose the legislation because it infringes on intellectual property rights, creates a concern for safety, and could potentially damage their reputations. The opposition, however, is seen as a hindrance to creating a more sustainable and repair-friendly tech ecosystem. So why is Apple’s support for this bill surprising? Simply put, Apple's commitment to repair may be more about complying with legislation than a fundamental shift in its design philosophy.
-                </p>
-                
-                <p>
-                    The whole goal of the bill is aimed at reducing environmental impacts from e-waste, in particular reducing the contributing carbon emissions and resource depletion from electronic waste that accumulates in landfills. It also attempts to level the playing field for independent repairs between device manufacturers and everyone else.
-                </p>
-
-                <blockquote class="quote">
-                    <p><span><i class="ri-double-quotes-l"></i></span> Despite the environmental benefits of increased repair access, some of the world’s biggest tech companies, including Apple, Microsoft, Amazon, Alphabet, Meta, and Tesla, have spent millions convincing lawmakers not to support it. Manufacturers cite a range of reasons for their opposition: right to repair will infringe on their intellectual property rights; consumers will injure themselves fixing their stuff; independent repair will lead to more hacking; and shoddy repairs will damage companies’ reputations. John Deere has even claimed that greater repair access will allow farmers to tamper with the emissions controls on their tractors in violation of the Clean Air Act — a notion the Environmental Protection Agency recently refuted. <span><i class="ri-double-quotes-r"></i></span></p>
-                </blockquote>
-            
-                <p>
-                    Repair advocates and lawmakers argue that these claims are baseless and that the real reason is the impact on bottom line profits. To hinder independent repair, tech giants make it challenging to fix devices through design choices by soldering components directly to logic boards, parts pairing which makes it difficult to refurbish devices, the use of proprietary screws, and utilizing glued-in batteries, all of these design choices create physical barriers to repair. Software support is another critical factor, as manufacturers discontinuing updates can render devices obsolete. Software locks pose significant threats to the refurbishment business model, making it more challenging for professionals to salvage and restore devices. However, tech companies are starting to realize they may be on the losing side; Apple launched the first self-repair programs in 2022, Microsoft released a study promoting independent repairs, and Samsung and Google announced partnerships with iFixit, a company that provides online resources for DIY-ers. 
-                </p>
-
-                <p>
-                    The article by Verge, “The right-to-repair movement is just getting started”, presents a complex landscape where legislative victories are celebrated, but challenges persist due to manufacturer practices, design choices, and the need for more comprehensive regulations. It’s an ongoing struggle and there is a call for nationwide legislation in the United States. There needs to be a way to ensure transparency and fair market competition. EU’s ecodesign regulation mandates manufacturers design products to meet standards which promote a more environmentally conscious approach to product development and it would be interesting to see if something similar would be passed in the United States and how it would affect both device manufacturers and independent repairers. 
-                </p>
-
-                <p>
-                    Source Link: <a href="https://www.theverge.com/23951200/right-to-repair-law-apple-ifixit-iphone">"The right-to-repair movement is just getting started"</a>
+                    Related Articles:
                 </p>
 
                 <div class="author d-grid">
