@@ -28,6 +28,7 @@
     display: block;
     width: 80%;
     max-width: 700px;
+    position: relative;
   }
   
   /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -44,7 +45,7 @@
 
 .modal-description {
     position: absolute; /* Position the description relative to its containing element */
-    bottom: 200px; /* Position 10px from the bottom */
+    bottom: 65px; /* Position 10px from the bottom */
     left: 50%; /* Move description to the horizontal center */
     transform: translateX(-50%); /* Adjust to center horizontally */
     text-align: center; /* Center the text */
@@ -65,8 +66,8 @@
   /* The Close Button */
   .close {
     position: absolute;
-    bottom: 650px; /* change top to bottom and vice versa */
-    right: 200px;
+    bottom: 550px; /* change top to bottom and vice versa */
+    right: 220px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;

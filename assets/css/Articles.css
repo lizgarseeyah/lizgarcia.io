@@ -47,9 +47,17 @@ h2 {
     font-size: 18px;
 }
 
-a {
+h3{
+    margin-bottom: 5px; /* Adds 10px margin below each h3 element */
+}
+
+a{
     color: #0077cc; /* Set the link text color */
     text-decoration: none; /* Remove underlines from links */
+}
+
+p{
+    margin-bottom: 30px; /* Adds 20px margin below each paragraph element */
 }
 
 body{
@@ -319,9 +327,16 @@ body.light-theme{
 .headline-banner{
     background-color: var(--secondary-background-color);
     display: flex;
+    justify-content: center;
+    text-align: center;
     align-items: center;
     gap: var(--gap);
     font-size: var(--font-size-xsm);
+}
+
+.bold-large-font {
+    font-size: 2rem; /* Adjust the size as needed */
+    font-weight: bold;
 }
 
 .headline{

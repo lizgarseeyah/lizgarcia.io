@@ -319,6 +319,21 @@ body.light-theme{
 .headline-banner{
     background-color: var(--secondary-background-color);
     display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: var(--gap);
+    font-size: var(--font-size-xsm);
+}
+
+.bold-large-font {
+    font-size: 2rem; /* Adjust the size as needed */
+    font-weight: bold;
+}
+
+.headline-banner{
+    background-color: var(--secondary-background-color);
+    display: flex;
     align-items: center;
     gap: var(--gap);
     font-size: var(--font-size-xsm);
