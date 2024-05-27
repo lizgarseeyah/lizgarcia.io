@@ -680,6 +680,20 @@ body.light-theme{
 }
   
 /* Blog post */
+/* Add bullets to blog post lists */
+.body-blog ul {
+    list-style-type: disc; /* You can change this to circle or square for different bullet styles */
+    margin: 1rem 0;
+    padding-left: 1.5rem; /* Adjust to indent bullets */
+}
+
+.body-blog ul li {
+    margin-bottom: 0.5rem; /* Adjust spacing between list items */
+}
+/**/
+
+
+/**/
 .blog-post{
     padding-bottom: 5rem;
 }
@@ -712,6 +726,21 @@ body.light-theme{
     margin: 0 auto;
     margin-left: 0;
 }
+
+/**/
+/* Base link styles */
+.blog-post-container a {
+    color: #4fcf70; /* Set the default link text color */
+    text-decoration: none; /* Remove underlines from links */
+    transition: color 0.25s; /* Smooth transition for color change */
+}
+
+/* Hover state */
+.blog-post-container a:hover {
+    color: #fad648; /* Color when the link is hovered */
+}
+
+/**/
 
 .blog-post-container .container{
     max-width: 90rem;
