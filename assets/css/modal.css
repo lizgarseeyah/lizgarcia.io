@@ -45,7 +45,7 @@
 
 .modal-description {
     position: absolute; /* Position the description relative to its containing element */
-    bottom: 65px; /* Position 10px from the bottom */
+    bottom: 230px; /* Position 10px from the bottom */
     left: 50%; /* Move description to the horizontal center */
     transform: translateX(-50%); /* Adjust to center horizontally */
     text-align: center; /* Center the text */
@@ -66,7 +66,7 @@
   /* The Close Button */
   .close {
     position: absolute;
-    bottom: 550px; /* change top to bottom and vice versa */
+    bottom: 740px; /* change top to bottom and vice versa */
     right: 220px;
     color: #f1f1f1;
     font-size: 40px;
@@ -87,3 +87,47 @@
       width: 100%;
     }
   } 
+
+  /* Carousel Navigation buttons */
+/* Style for navigation buttons */
+.carousel-swiper-button-next,
+.carousel-swiper-button-prev {
+  position: absolute;
+  bottom: -50px;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-swiper-button-next::after,
+.carousel-swiper-button-prev::after {
+  content: "";
+  display: inline-block;
+  border: solid #ccc;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.carousel-swiper-button-next {
+  right: 150px; /* Positioned under the image */
+  transform: translateX(50%) translateY(-50%);
+}
+
+.carousel-swiper-button-prev {
+  left: 150px; /* Positioned under the image */
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* Style for navigation buttons on smaller screens */
+@media only screen and (max-width: 700px) {
+  .carousel-swiper-button-next,
+  .carousel-swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+}

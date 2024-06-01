@@ -13,9 +13,6 @@
     <!-- Embla Carousel -->
     <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla-carousel.css">
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
-    <!-- Swiper.js -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Custom styles -->
     <link rel="stylesheet" href="../assets/css/Articles.css">
     <!-- Modal styles -->
@@ -125,32 +122,13 @@
                         <!-- The Close Button -->
                         <span class="close">&times;</span>
                         <!-- Modal Content (The Image) -->
-                        <div class="modal-content">
-                            <img id="img01">
-                            <!-- Caorousel Container -->
-                            <div class="carousel-container swiper">
-                                <!-- Swiper -->
-                                <div class="swiper-wrapper">
-                                    <!-- Carousel slides -->
-                                    <div class="swiper-slide">
-                                        <!-- <img src="../assets/images/photos_film/photos/orange.JPG" alt=""> -->
-                                        <div class="carousel-description">
-                                            <p>Orange tree from the backyard.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Add more carousel slides as needed -->
-                                </div>
-                                <!-- Add navigation buttons -->
-                                <div class="carousel-swiper-button-prev"></div>
-                                <div class="carousel-swiper-button-next"></div>
-                            </div>
-                        </div>
+                        <img class="modal-content" id="img01">
                         <!-- Modal Caption (Image Text) -->
                         <div id="caption"></div>
-                        <!-- Additional Description -->
-                        <!-- <div class="modal-description">
+                            <!-- Additional Description -->
+                        <div class="modal-description">
                             <p>Orange tree from the backyard.</p>
-                        </div> -->
+                        </div>
                     </div>
                     <!--If img src is clicked, pull a carousel of images from folder with description -->
                     <!-- <div class="article-data-container">

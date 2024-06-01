@@ -11,40 +11,39 @@ var captionText = document.getElementById("caption");
 var captionText2 = document.getElementById("caption02");
 
 // Event listener for the first image
-img.onclick = function(){
+img.onclick = function() {
   modal.style.display = "block";
   modalImg.src = this.src;
   captionText.innerHTML = this.alt;
 
-  // Initialize the carousel when the image is clicked
-  var mySwiper = new Swiper('.carousel-container', {
-      // Optional parameters
-      loop: true,
-      // If you have more images, adjust the slidesPerView accordingly
-      slidesPerView: 1,
-      // Navigation arrows
-      navigation: {
-          nextEl: '.carousel-swiper-button-next',
-          prevEl: '.carousel-swiper-button-prev',
-      },
+  // Initialize Swiper for the first modal
+  var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 }
 
 // Event listener for the second image
-img2.onclick = function(){
+img2.onclick = function() {
   modal2.style.display = "block"; // Use the second modal for the second image
   modalImg2.src = this.src;
   captionText2.innerHTML = this.alt;
-  // Initialize the carousel when the second image is clicked
-  var mySwiper2 = new Swiper('.swiper2', {
-    // Optional parameters
-    loop: true,
-    // If you have more images, adjust the slidesPerView accordingly
-    slidesPerView: 1,
-    // Navigation arrows
+
+  // Initialize Swiper for the second modal
+  var swiper2 = new Swiper(".mySwiper02", { // Use a different class for the second Swiper instance
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     navigation: {
-        nextEl: '.carousel-swiper-button-next2',
-        prevEl: '.carousel-swiper-button-prev2',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
 }
@@ -60,4 +59,13 @@ span.onclick = function() {
 
 span2.onclick = function() {
   modal2.style.display = "none";
+}
+
+// Close the modal when clicking outside of the modal content
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  } else if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
 }
