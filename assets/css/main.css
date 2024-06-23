@@ -724,6 +724,8 @@ body.light-theme{
 .quote{
     background-color: var(--secondary-background-color);
     padding: 2.5rem;
+    margin-top: 20px; /* Adjust the value as needed */
+    margin-bottom: 20px; /* Adjust the value as needed */
 }
 
 .quote p{
